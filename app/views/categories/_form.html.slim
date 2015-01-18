@@ -1,0 +1,14 @@
+= form_for @category, html: { class: "form form-horizontal category" } do |f|
+  .form-group
+    = f.label :title, :class => 'control-label'
+    .controls
+      = f.text_field :title, :class => 'form-control'
+    = error_span(@category[:title])
+  .form-group
+    = f.label :subdomain, :class => 'control-label'
+    .controls
+      = f.text_field :subdomain, :class => 'form-control'
+    = error_span(@category[:subdomain])
+  = f.submit nil, :class => 'btn btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), categories_path, :class => 'btn'
