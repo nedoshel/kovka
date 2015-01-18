@@ -1,8 +1,11 @@
 class Product < ActiveRecord::Base
 
-  attachment :image
-  # = image_tag attachment_url(@product, :image, :fill, 300, 300)
+  mount_uploader :image
+  acts_as_taggable
+
 
   belongs_to :category
+
+  validates_presence_of :category_id, :image, :article
 
 end

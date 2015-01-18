@@ -16,10 +16,15 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 
+gem 'simple_form',  '>= 3.1.0'
+
 gem 'jbuilder', '~> 2.0'
 
-gem "mini_magick"
-gem "refile", require: ["refile/rails", "refile/image_processing"]
+gem 'mini_magick'
+gem 'carrierwave'
+
+gem "select2-rails"
+gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'puma'
 
