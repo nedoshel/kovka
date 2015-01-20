@@ -5,11 +5,13 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    @tags = Product.tag_counts_on(:tags)
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @tags = @category.products.tag_counts_on(:tags)
   end
 
   # GET /categories/new
@@ -64,7 +66,8 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      # @category = Category.find(params[:id])
+      @category = Category.find_by_subdomain request.subdomain
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

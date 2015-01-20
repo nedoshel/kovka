@@ -9,17 +9,17 @@ table class="table table-striped"
       th= model_class.human_attribute_name(:article)
       th= model_class.human_attribute_name(:description)
       th= model_class.human_attribute_name(:image)
-      th= model_class.human_attribute_name(:created_at)
+      th
       th=t '.actions', :default => t("helpers.actions")
   tbody
     - @products.each do |product|
       tr
         td= link_to product.id, admin_product_path(product)
-        td= product.category_id
+        td= product.category.title
         td= product.article
         td= product.description
-        td= product.image
-        td=l product.created_at
+        td= image_tag product.image.url(:thumb), width: 50
+        td
         td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_product_path(product), :class => 'btn btn-default btn-xs'
           '

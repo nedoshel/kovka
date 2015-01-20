@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'categories#index'
+
 
   resources :categories, only: [ :index ]
 
@@ -8,9 +8,12 @@ Rails.application.routes.draw do
     get '/' => 'categories#show'
   end
 
+  root 'categories#index'
+  get 'admin/tags' => 'admin#tags'
 
   namespace 'admin' do
     get '/' => 'categories#index'
+
     resources :categories
     resources :products
   end

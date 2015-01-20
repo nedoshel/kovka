@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
 
-  mount_uploader :image
+  mount_uploader :image, ImageUploader
   acts_as_taggable
 
 

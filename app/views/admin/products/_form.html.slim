@@ -5,6 +5,7 @@
   = f.input :description
   = f.input :image
 
+  / = f.input :tag_list, as: :select, input_html: { class: 'js-select2-tags', multiple: "multiple" }, collection: [['1', '1'], ['2', '2']]
   = f.input :tag_list, input_html: { class: 'js-select2-tags' }
 
   / = f.attachment_field :image

@@ -23,8 +23,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'mini_magick'
 gem 'carrierwave'
 
+gem 'jquery-colorbox-rails'
 gem "select2-rails"
 gem 'acts-as-taggable-on', '~> 3.4'
+
+gem 'russian'
+
 
 gem 'puma'
 
@@ -48,3 +52,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'capistrano', '~> 3.2.0'
+gem 'capistrano-bundler' # for capistrano/bundler
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
+gem 'capistrano3-puma'
