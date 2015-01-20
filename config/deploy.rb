@@ -49,7 +49,8 @@ set :linked_files, %w{config/database.yml config/secrets.yml}
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :linked_dirs, %w{log tmp vendor/bundle}
+set :linked_dirs, %w{log tmp tmp/pids tmp/sockets vendor/bundle}
+# set :linked_dirs, %w{tmp/pids tmp/sockets log}
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
