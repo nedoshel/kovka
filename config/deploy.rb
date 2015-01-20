@@ -1,13 +1,13 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :ssh_options, { forward_agent: true }
+set :ssh_options, { forward_agent: true, port: 2224 }
 # set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 set :application, 'kovanye.su'
 set :repo_url, 'git@github.com:nedoshel/kovka.git'
 
 
-set :deploy_to, '/home/deploy/web/code-maniacs'
+set :deploy_to, '/home/deploy/kovka'
 
 set :rvm_type, :user
 
