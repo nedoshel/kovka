@@ -3,35 +3,12 @@
   = f.input :category_id, collection: Category.pluck(:title, :id)
   = f.input :article
   = f.input :description
+  = f.input :figure_alt
+  = f.input :meta_width
+  = f.input :meta_height
+  = f.input :tovname_title
   = f.input :image
 
-  / = f.input :tag_list, as: :select, input_html: { class: 'js-select2-tags', multiple: "multiple" }, collection: [['1', '1'], ['2', '2']]
   = f.input :tag_list, input_html: { class: 'js-select2-tags' }
 
-  / = f.attachment_field :image
-
   = f.button :submit
-
-  / .form-group
-  /   = f.label :category_id, :class => 'control-label'
-  /   .controls
-  /     = f.text_field :category_id, :class => 'form-control'
-  /   = error_span(@product[:category_id])
-  / .form-group
-  /   = f.label :article, :class => 'control-label'
-  /   .controls
-  /     = f.text_field :article, :class => 'form-control'
-  /   = error_span(@product[:article])
-  / .form-group
-  /   = f.label :description, :class => 'control-label'
-  /   .controls
-  /     = f.text_field :description, :class => 'form-control'
-  /   = error_span(@product[:description])
-  / .form-group
-  /   = f.label :image, :class => 'control-label'
-  /   .controls
-  /     = f.text_field :image, :class => 'form-control'
-  /   = error_span(@product[:image])
-  / = f.submit nil, :class => 'btn btn-primary'
-  / '
-  / = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_products_path, :class => 'btn'

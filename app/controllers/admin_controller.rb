@@ -6,7 +6,8 @@ class AdminController < ApplicationController
 
 
   def tags
-    render json: [ {id: '1', text: '1'}, {id: '2', text: '2'} ]
+    tags = ActsAsTaggableOn::Tag.where("name LIKE '%#{params[:q]}%'").pluck :name
+    render json: tags.map { |t| { id: t, text: t }}
   end
 
 end
