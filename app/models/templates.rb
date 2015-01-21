@@ -1,6 +1,6 @@
 class Templates < RailsSettings::CachedSettings
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, FileUploader
 
   # Средний текст в футере (footer_text) - string
   # title  - string
@@ -30,9 +30,14 @@ class Templates < RailsSettings::CachedSettings
   }
 
   LOGO = { title: 'Кровати в Москве от производителя', img: '/img/logo.png' }
+  FAVICON = { title: 'фавикон', img: '/img/favicon.ico' }
 
   def Templates.logo
     Templates.where(var: 'logo').first
+  end
+
+  def Templates.favicon
+    Templates.where(var: 'favicon').first
   end
 
 
