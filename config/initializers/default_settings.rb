@@ -1,4 +1,4 @@
-# begin
+begin
   Templates::DEFAULTS.each do |key, value|
     eval %Q(Templates.#{key} ||= '#{value}')
   end
@@ -8,5 +8,5 @@
     Templates.logo.update(image: File.open("#{Rails.root}/app/assets/images#{Templates::LOGO[:img]}"))
   end
 
-# rescue
-# end
+rescue
+end
