@@ -1,0 +1,13 @@
+/ .element class=translit_to_class(product.tag_list)
+.element
+  div itemscope="" itemtype="http://schema.org/ImageObject"
+    .block-thumbnail-2
+      figure.img-polaroid-1
+        a href=category_href(category)
+          = image_tag category.image.url(:thumb), alt: category.seo_title, itemprop: "contentUrl"
+      meta content="300" itemprop="width"
+      meta content="160" itemprop="height"
+      .tovname
+        = link_to category.title, '#', itemprop: "name", title: category.seo_title
+      .full-description
+        p itemprop="description"= category.category_spec

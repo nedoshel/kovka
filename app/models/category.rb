@@ -17,4 +17,6 @@ class Category < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   has_many :products, dependent: :destroy
+
+  validates_presence_of :image
 end

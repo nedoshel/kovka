@@ -63,28 +63,6 @@ set :linked_dirs, %w{log tmp/pids tmp/sockets vendor/bundle public/uploads}
 # Default value for keep_releases is 5
 set :keep_releases, 2
 
-# namespace :deploy do
-
-#   desc 'Restart application'
-#   task :restart do
-#     on roles(:app), in: :sequence, wait: 5 do
-#       # Your restart mechanism here, for example:
-#       # execute :touch, release_path.join('tmp/restart.txt')
-#     end
-#   end
-
-#   after :publishing, :restart
-
-#   after :restart, :clear_cache do
-#     on roles(:web), in: :groups, limit: 3, wait: 10 do
-#       # Here we can do anything such as:
-#       # within release_path do
-#       #   execute :rake, 'cache:clear'
-#       # end
-#     end
-#   end
-
-# end
 namespace :deploy do
   desc "Make sure local git is in sync with remote."
   task :check_revision do
@@ -98,12 +76,12 @@ namespace :deploy do
   end
 
   desc 'Initial Deploy'
-  task :initial do
-    on roles(:app) do
-      before 'deploy:restart', 'puma:start'
-      invoke 'deploy'
-    end
-  end
+  # task :initial do
+  #   on roles(:app) do
+  #     before 'deploy:restart', 'puma:start'
+  #     invoke 'deploy'
+  #   end
+  # end
 
   desc 'Restart application'
   task :restart do
@@ -116,7 +94,16 @@ namespace :deploy do
   # after  :finishing,    :compile_assets
   # after  :finishing,    :cleanup
   # after  :finishing,    :restart
-  after  :publishing,    :restart
+  after :publishing, :restart
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
+    end
+  end
 end
 
 # ps aux | grep puma    # Get puma pid
