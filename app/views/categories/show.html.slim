@@ -5,7 +5,7 @@ header
         .clearfix
           .brand
             a href=root_url(subdomain: '')
-              img alt=("Фабрика кроватей Letto") src=image_url("img/logo.png") title=("Кровати в Москве от производителя") /
+              img alt=Templates.logo.try(:title) src=Templates.logo.try(:image).try(:url) title=Templates.logo.try(:title)
             span Кровати в Москве с доставкой от фабрики производителя
             div itemscope="" itemtype="http://schema.org/Organization"
               span itemprop="name"  Фабрика кроватей Letto
