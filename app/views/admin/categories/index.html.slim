@@ -7,7 +7,7 @@ table class="table table-striped"
       th= model_class.human_attribute_name(:id)
       th= model_class.human_attribute_name(:title)
       th= model_class.human_attribute_name(:subdomain)
-      th= model_class.human_attribute_name(:created_at)
+      th
       th=t '.actions', :default => t("helpers.actions")
   tbody
     - @categories.each do |category|
@@ -15,7 +15,7 @@ table class="table table-striped"
         td= link_to category.id, admin_category_path(category)
         td= category.title
         td= category.subdomain
-        td=l category.created_at
+        td= image_tag category.image.url(:thumb), width: 50
         td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_category_path(category), :class => 'btn btn-default btn-xs'
           '

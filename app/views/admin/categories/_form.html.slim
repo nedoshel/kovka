@@ -10,8 +10,9 @@
   = f.input :firm_purpose
   = f.input :footer_text
   = f.input :image
-
-
+  - if @category.image.present?
+    = image_tag @category.image.url
+    .clearfix
 
   /= error_span(@category[:subdomain])
 

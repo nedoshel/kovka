@@ -2,8 +2,9 @@
   = f.object.var
   = f.input :value
   = f.input :image
-
-
+  - if @setting.image.present?
+    = image_tag @setting.image.url
+    .clearfix
 
   /= error_span(@category[:subdomain])
 

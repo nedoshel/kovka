@@ -7,8 +7,11 @@
   = f.input :meta_width
   = f.input :meta_height
   = f.input :tovname_title
-  = f.input :image
-
   = f.input :tag_list, input_html: { class: 'js-select2-tags' }
+  = f.input :image
+  - if @product.image.present?
+    = image_tag @product.image.url
+    .clearfix
+
 
   = f.button :submit
