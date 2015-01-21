@@ -1,213 +1,146 @@
-doctype html
-html lang="ru"
-  head
-    title Кованые изделия
-    meta charset="utf-8" /
-    meta content=("Кровати из дерева двуспальные по недорогой цене от производителя деревянных кроватей из сосны. Купить в Москве кровать через интернет-магазин Letto с доставкой.") name="description" /
-    meta content="кровать, кровать двуспальная недорого, кровати москва, купить двуспальную кровать недорого, кровать двуспальная недорого, двуспальные кровати москва, кровати из дерева в москве, кровати из сосны, купить кровать, купить кровать двуспальную недорого, двуспальные деревянные кровати в москве недорого, деревянная кровать" name="keywords" /
-    meta content=("Московская фабрика двуспальных кроватей Letto") name="author" /
-    meta content="telephone=yes" name="format-detection" /
-    link href="img/favicon.ico" rel="icon" type="image/x-icon" /
-    link href="img/favicon.ico" rel=("shortcut icon") type="image/x-icon" /
-    / link href="css/application.css" media="screen" rel="stylesheet" type="text/css" /
-    / script src="http://yandex.st/jquery/1.8.1/jquery.min.js" type="text/javascript"
-    / script src="js/superfish.js" type="text/javascript"
-    / script src="js/jquery.mobilemenu.js" type="text/javascript"
-  body
-    header
-      .container
-        .navbar.navbar_.clearfix
-          .navbar-inner
-            .clearfix
-              .brand
-                a href=root_url
-                  img alt=("Фабрика кроватей Letto") src="img/logo.png" title=("Кровати в Москве от производителя") /
-                span Кровати в Москве с доставкой от фабрики производителя
-                div itemscope="" itemtype="http://schema.org/Organization"
-                  span itemprop="name"  Фабрика кроватей Letto
-                  span itemprop="address"  Москва
-                  span itemprop="telephone"  +7 (499) 000-00-00
-              .text-left
-                | +7 (499) 000-00-00
-                br/
-                .time Кованые изделия
-              .nav-collapse.nav-collapse_.collapse
-                ul.nav.sf-menu.clearfix
-                  - Category.all.each do |category|
-                    li class="#{'active' if request.subdomain == category.subdomain}"
-                      = category_link category.title, category
-    #content
-      .container
-        .row
-          article.span12
-            h1 Кованые заборы
-        .row
-          article.span12
-            span.txt-filter Выберите:
-            ul#filters
-              li
-                a.selected data-filter="*" href="#"  Все варианты
-              li
-                a data-filter=".eskiz" href="#"  Эскизы
-              li
-                a data-filter=".photo" href="#"  Фото
-              li
-                a data-filter=".prost" href="#"  Простой формы
-              li
-                a data-filter=".slozhn" href="#"  Сложной формы
-              li
-                a data-filter=".deshevo" href="#"  Дешевые
-              li
-                a data-filter=".nedorogo" href="#"  Недорогие
-              li
-                a data-filter=".premium" href="#"  Премиум-сегмент
-            #container.row
-              .element.prost.eskiz
-                div itemscope="" itemtype="http://schema.org/ImageObject"
-                  .block-thumbnail-2
-                    figure.img-polaroid-1
-                      a href="index.html"
-                        img alt=("Двуспальная кровать недорогая с высоким изголовьем Александрия-1") itemprop="contentUrl" src="images/thumbs/aleksandriya-1.jpg"
-                    meta content="300" itemprop="width"
-                    meta content="160" itemprop="height"
-                    .tovname
-                      a href="index.html" itemprop="name" title=("Купить кровать недорого в Москве Александрия-1")  Забор кованый арт.0001
-                    .full-description
-                      p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
+header
+  .container
+    .navbar.navbar_.clearfix
+      .navbar-inner
+        .clearfix
+          .brand
+            a href=root_url
+              img alt=("Фабрика кроватей Letto") src="img/logo.png" title=("Кровати в Москве от производителя") /
+            span Кровати в Москве с доставкой от фабрики производителя
+            div itemscope="" itemtype="http://schema.org/Organization"
+              span itemprop="name"  Фабрика кроватей Letto
+              span itemprop="address"  Москва
+              span itemprop="telephone"  +7 (499) 000-00-00
+          .text-left
+            | +7 (499) 000-00-00
+            br/
+            .time Кованые изделия
+          .nav-collapse.nav-collapse_.collapse
+            ul.nav.sf-menu.clearfix
+              - Category.all.each do |category|
+                li class="#{'active' if request.subdomain == category.subdomain}"
+                  = category_link category.title, category
+#content
+  .container
+    .row
+      article.span12
+        h1= Templates.header_title
+    .row
+      article.span12
+        span.txt-filter Выберите:
+        ul#filters
+          li
+            a.selected data-filter="*" href="#"  Все варианты
+          li
+            a data-filter=".eskiz" href="#"  Эскизы
+          li
+            a data-filter=".photo" href="#"  Фото
+          li
+            a data-filter=".prost" href="#"  Простой формы
+          li
+            a data-filter=".slozhn" href="#"  Сложной формы
+          li
+            a data-filter=".deshevo" href="#"  Дешевые
+          li
+            a data-filter=".nedorogo" href="#"  Недорогие
+          li
+            a data-filter=".premium" href="#"  Премиум-сегмент
+        #container.row
+          .element.prost.eskiz
+            div itemscope="" itemtype="http://schema.org/ImageObject"
+              .block-thumbnail-2
+                figure.img-polaroid-1
+                  a href="index.html"
+                    img alt=("Двуспальная кровать недорогая с высоким изголовьем Александрия-1") itemprop="contentUrl" src="images/thumbs/aleksandriya-1.jpg"
+                meta content="300" itemprop="width"
+                meta content="160" itemprop="height"
+                .tovname
+                  a href="index.html" itemprop="name" title=("Купить кровать недорого в Москве Александрия-1")  Забор кованый арт.0001
+                .full-description
+                  p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
 
 
-              .element.slozhn.photo
-                div itemscope="" itemtype="http://schema.org/ImageObject"
-                  .block-thumbnail-2
-                    figure.img-polaroid-1
-                      a href="index.html"
-                        img alt=("Кровать двуспальная недорого простой конструкции Александрия-2") itemprop="contentUrl" src="images/thumbs/aleksandriya-2.jpg" /
-                    meta content="300" itemprop="width" /
-                    meta content="160" itemprop="height" /
-                    .tovname
-                      a href="index.html" itemprop="name" title=("Купить кровать из дерева в Москве Александрия-2")  Забор кованый арт.0002
-                    .full-description
-                      p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
-              .element.deshevo.eskiz
-                div itemscope="" itemtype="http://schema.org/ImageObject"
-                  .block-thumbnail-2
-                    figure.img-polaroid-1
-                      a href="index.html"
-                        img alt=("Двуспальная кровать с ротангом Амазонка-1") itemprop="contentUrl" src="images/thumbs/amazonka-1.jpg" /
-                    meta content="300" itemprop="width" /
-                    meta content="160" itemprop="height" /
-                    .tovname
-                      a href="index.html" itemprop="name" title=("Купить кровать из дерева в Москве Амазонка-1")  Забор кованый арт.0003
-                    .full-description
-                      p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
-              .element.nedorogo
-                div itemscope="" itemtype="http://schema.org/ImageObject"
-                  .block-thumbnail-2
-                    figure.img-polaroid-1
-                      a href="index.html"
-                        img alt=("Ротанговая кровать двуспальная Амазонка-2") itemprop="contentUrl" src="images/thumbs/amazonka-2.jpg" /
-                    meta content="300" itemprop="width" /
-                    meta content="160" itemprop="height" /
-                    .tovname
-                      a href="index.html" itemprop="name" title=("Купить ротанговую кровать из дерева в Москве Амазонка-2")  Забор кованый арт.0004
-                    .full-description
-                      p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
-              .element.premium
-                div itemscope="" itemtype="http://schema.org/ImageObject"
-                  .block-thumbnail-2
-                    figure.img-polaroid-1
-                      a href="index.html"
-                        img alt=("Двуспальная кровать с красивой ковкой Амулет-1") itemprop="contentUrl" src="images/thumbs/amulet-1.jpg" /
-                    meta content="300" itemprop="width" /
-                    meta content="160" itemprop="height" /
-                    .tovname
-                      a href="index.html" itemprop="name" title=("Купить двуспальную кровать с ковкой в Москве Амулет-1")  Забор кованый арт.0005
-                    .full-description
-                      p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
-              .element.prost
-                div itemscope="" itemtype="http://schema.org/ImageObject"
-                  .block-thumbnail-2
-                    figure.img-polaroid-1
-                      a href="index.html"
-                        img alt=("Деревянная двуспальная кровать с элементами ковки Амулет-2") itemprop="contentUrl" src="images/thumbs/amulet-2.jpg" /
-                    meta content="300" itemprop="width" /
-                    meta content="160" itemprop="height" /
-                    .tovname
-                      a href="index.html" itemprop="name" title=("Купить деревянную двуспальную кровать в Москве Амулет-2")  Забор кованый арт.0006
-                    .full-description
-                      p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
-              .element.prost.premium
-                div itemscope="" itemtype="http://schema.org/ImageObject"
-                  .block-thumbnail-2
-                    figure.img-polaroid-1
-                      a href="index.html"
-                        img alt=("Кровать из сосны с выдвижными ящиками Аполло") itemprop="contentUrl" src="images/thumbs/apollo.jpg" /
-                    meta content="300" itemprop="width" /
-                    meta content="160" itemprop="height" /
-                    .tovname
-                      a href="index.html" itemprop="name" title=("Купить кровать из сосны с ящиками Аполло недорого в Москве")  Забор кованый арт.0007
-                    .full-description
-                      p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
-              .element.deshevo
-                div itemscope="" itemtype="http://schema.org/ImageObject"
-                  .block-thumbnail-2
-                    figure.img-polaroid-1
-                      a href="index.html"
-                        img alt=("Двуспальная кровать с выдвижными ящиками Ариэль-2") itemprop="contentUrl" src="images/thumbs/ariel-2.jpg" /
-                    meta content="300" itemprop="width" /
-                    meta content="160" itemprop="height" /
-                    .tovname
-                      a href="index.html" itemprop="name" title=("Купить кровать из дерева в Москве Ариэль-2")  Забор кованый арт.0008
-                    .full-description
-                      p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
-    / script src="http://st.krovati.msk.ru/js/jquery.isotope.min.js"
-    javascript:
-      $(function(){
-        var $container = $('#container');
-          $container.isotope({
-          });
-          $('#filters a').click(function(){
-            var selector = $(this).attr('data-filter');
-            $container.isotope({ filter: selector });
-            return false;
-          });
-          var $optionLinks = $('#filters li a');
-        $optionLinks.click(function(){
-          var $this = $(this);
-          if ( $this.hasClass('selected') ) {
-            return false;
-          }
-          var $optionSet = $this.parents('#filters');
-          $optionSet.find('.selected').removeClass('selected');
-          $this.addClass('selected');
-          var options = {},
-              key = $optionSet.attr('data-option-key'),
-              value = $this.attr('data-option-value');
-          value = value === 'false' ? false : value;
-          options[ key ] = value;
-          if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
-            changeLayoutMode( $this, options )
-          } else {
-            $container.isotope( options );
-          }
-          return false;
-        });
-      });
-    footer
-      .container
-        .row
-          article.span2
-            span
-              'Кованые заборы
-              span Terko
-          article.span7
-            .footer-div
-              span
-                'Кованые заборы и ограждения из метталла
-                br
-                'с установкой
-          article.span3
-            .footer-div
-              .store-phone +7 (499) 000-00-00
-
-    / script src="js/bootstrap.js" type="text/javascript"
+          .element.slozhn.photo
+            div itemscope="" itemtype="http://schema.org/ImageObject"
+              .block-thumbnail-2
+                figure.img-polaroid-1
+                  a href="index.html"
+                    img alt=("Кровать двуспальная недорого простой конструкции Александрия-2") itemprop="contentUrl" src="images/thumbs/aleksandriya-2.jpg" /
+                meta content="300" itemprop="width" /
+                meta content="160" itemprop="height" /
+                .tovname
+                  a href="index.html" itemprop="name" title=("Купить кровать из дерева в Москве Александрия-2")  Забор кованый арт.0002
+                .full-description
+                  p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
+          .element.deshevo.eskiz
+            div itemscope="" itemtype="http://schema.org/ImageObject"
+              .block-thumbnail-2
+                figure.img-polaroid-1
+                  a href="index.html"
+                    img alt=("Двуспальная кровать с ротангом Амазонка-1") itemprop="contentUrl" src="images/thumbs/amazonka-1.jpg" /
+                meta content="300" itemprop="width" /
+                meta content="160" itemprop="height" /
+                .tovname
+                  a href="index.html" itemprop="name" title=("Купить кровать из дерева в Москве Амазонка-1")  Забор кованый арт.0003
+                .full-description
+                  p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
+          .element.nedorogo
+            div itemscope="" itemtype="http://schema.org/ImageObject"
+              .block-thumbnail-2
+                figure.img-polaroid-1
+                  a href="index.html"
+                    img alt=("Ротанговая кровать двуспальная Амазонка-2") itemprop="contentUrl" src="images/thumbs/amazonka-2.jpg" /
+                meta content="300" itemprop="width" /
+                meta content="160" itemprop="height" /
+                .tovname
+                  a href="index.html" itemprop="name" title=("Купить ротанговую кровать из дерева в Москве Амазонка-2")  Забор кованый арт.0004
+                .full-description
+                  p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
+          .element.premium
+            div itemscope="" itemtype="http://schema.org/ImageObject"
+              .block-thumbnail-2
+                figure.img-polaroid-1
+                  a href="index.html"
+                    img alt=("Двуспальная кровать с красивой ковкой Амулет-1") itemprop="contentUrl" src="images/thumbs/amulet-1.jpg" /
+                meta content="300" itemprop="width" /
+                meta content="160" itemprop="height" /
+                .tovname
+                  a href="index.html" itemprop="name" title=("Купить двуспальную кровать с ковкой в Москве Амулет-1")  Забор кованый арт.0005
+                .full-description
+                  p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
+          .element.prost
+            div itemscope="" itemtype="http://schema.org/ImageObject"
+              .block-thumbnail-2
+                figure.img-polaroid-1
+                  a href="index.html"
+                    img alt=("Деревянная двуспальная кровать с элементами ковки Амулет-2") itemprop="contentUrl" src="images/thumbs/amulet-2.jpg" /
+                meta content="300" itemprop="width" /
+                meta content="160" itemprop="height" /
+                .tovname
+                  a href="index.html" itemprop="name" title=("Купить деревянную двуспальную кровать в Москве Амулет-2")  Забор кованый арт.0006
+                .full-description
+                  p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
+          .element.prost.premium
+            div itemscope="" itemtype="http://schema.org/ImageObject"
+              .block-thumbnail-2
+                figure.img-polaroid-1
+                  a href="index.html"
+                    img alt=("Кровать из сосны с выдвижными ящиками Аполло") itemprop="contentUrl" src="images/thumbs/apollo.jpg" /
+                meta content="300" itemprop="width" /
+                meta content="160" itemprop="height" /
+                .tovname
+                  a href="index.html" itemprop="name" title=("Купить кровать из сосны с ящиками Аполло недорого в Москве")  Забор кованый арт.0007
+                .full-description
+                  p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.
+          .element.deshevo
+            div itemscope="" itemtype="http://schema.org/ImageObject"
+              .block-thumbnail-2
+                figure.img-polaroid-1
+                  a href="index.html"
+                    img alt=("Двуспальная кровать с выдвижными ящиками Ариэль-2") itemprop="contentUrl" src="images/thumbs/ariel-2.jpg" /
+                meta content="300" itemprop="width" /
+                meta content="160" itemprop="height" /
+                .tovname
+                  a href="index.html" itemprop="name" title=("Купить кровать из дерева в Москве Ариэль-2")  Забор кованый арт.0008
+                .full-description
+                  p itemprop="description"  Декоративный забор недорогой с установкой. Простой дизайн подойдет для любого московского загородного дома.

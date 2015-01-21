@@ -1,0 +1,13 @@
+footer
+  .container
+    .row
+      article.span2
+        span
+          'Кованые заборы
+          span Terko
+      article.span7
+        .footer-div
+          span= (content_for?(:footer_text) ? yield(:footer_text) : Templates.footer_text).html_safe
+      article.span3
+        .footer-div
+          .store-phone +7 (499) 000-00-00
