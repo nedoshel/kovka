@@ -10,11 +10,11 @@ header
             div itemscope="" itemtype="http://schema.org/Organization"
               span itemprop="name"  Фабрика кроватей Letto
               span itemprop="address"  Москва
-              span itemprop="telephone"  +7 (499) 000-00-00
+              span itemprop="telephone"= Templates.phone
           .text-left
-            | +7 (499) 000-00-00
+            = Templates.phone
             br/
-            .time Кованые изделия
+            .time= Templates.firm_product
           .nav-collapse.nav-collapse_.collapse
             ul.nav.sf-menu.clearfix
               - Category.all.each do |category|
