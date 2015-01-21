@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
 
   resources :categories, only: [ :index ]
+  resources :feedbacks, only: [ :new, :create ]
+
 
   constraints(Subdomain) do
     get '/' => 'categories#show'

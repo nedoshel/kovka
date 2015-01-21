@@ -37,6 +37,9 @@ gem "rails-settings-cached", "0.4.1"
 
 gem 'puma'
 
+
+gem 'email_validator'
+gem 'bootstrap-validator-rails'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 

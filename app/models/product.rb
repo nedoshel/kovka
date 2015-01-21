@@ -17,6 +17,7 @@ class Product < ActiveRecord::Base
 
 
   belongs_to :category
+  has_many :feedbacks, dependent: :nullify
 
   validates_presence_of :category_id, :image, :article
 

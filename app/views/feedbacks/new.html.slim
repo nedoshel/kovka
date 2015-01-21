@@ -1,0 +1,12 @@
+#content
+  .container
+    .row
+      article.span12
+        #container.row
+          = simple_form_for @feedback, html: { class: "form form-horizontal" } do |f|
+            = f.input :name
+            = f.input :email
+            = f.input :phone, as: :tel
+            = f.input :product_id
+            = f.input :comment
+            = f.button :submit

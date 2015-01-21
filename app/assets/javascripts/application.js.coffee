@@ -3,10 +3,9 @@
 #= require_tree ./libs
 #= require jquery.colorbox
 #= require jquery.colorbox-ru
-# require twitter/bootstrap
+#= require bootstrapValidator.min
+#= require formvalidation
 
-
-# require_tree .
 
 jQuery ->
   $('.colorbox').colorbox()
