@@ -1,0 +1,12 @@
+= simple_form_for [:admin, @setting], url: admin_setting_path(@setting), html: { class: "form form-horizontal setting" } do |f|
+  = f.object.var
+  = f.input :value
+  = f.input :image
+
+
+
+  /= error_span(@category[:subdomain])
+
+
+  = f.button :submit
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_settings_path, :class => 'btn'
