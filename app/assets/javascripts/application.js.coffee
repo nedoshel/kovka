@@ -8,5 +8,14 @@
 
 
 jQuery ->
-  $('.colorbox').colorbox()
+
+
+  $('.colorbox').on 'click', (e) ->
+    e.preventDefault()
+    url = $(@).attr 'href'
+    $.colorbox
+      href: url
+      onComplete: (e) ->
+        initValidation()
+
 

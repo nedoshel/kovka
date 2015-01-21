@@ -2,6 +2,8 @@ class FeedbacksController < ApplicationController
 
   def new
     @feedback = Feedback.new
+    @product = Product.find params[:product_id]
+    render layout: false
   end
 
   def create

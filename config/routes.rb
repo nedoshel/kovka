@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
 
   resources :categories, only: [ :index ]
-  resources :feedbacks, only: [ :new, :create ]
+  get '/feedbacks/new/:product_id' => 'feedbacks#new', as: :new_feedback
+  resources :feedbacks, only: [ :create ]
 
 
   constraints(Subdomain) do

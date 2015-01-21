@@ -1,4 +1,4 @@
-jQuery ->
+@initValidation = () ->
 
   $("#new_feedback").bootstrapValidator
     icon:
