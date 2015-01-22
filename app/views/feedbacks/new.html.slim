@@ -1,9 +1,10 @@
-#content style="max-width: 700px; min-width: 320px;"
+/ #content style="max-width: 700px; min-width: 320px;"
+#content
   #container.row
     .centered
       h1 Отправить заявку на
       h2 = @product.article
-      = image_tag @product.image.url(:thumb)
+      = image_tag @product.image.url, style: 'max-width: none;', class: 'colorbox-img'
       br
       = simple_form_for @feedback, html: { class: "form feedback" } do |f|
         = f.input :name
