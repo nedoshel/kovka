@@ -3,6 +3,7 @@
 #= require_tree ./libs
 #= require jquery.colorbox
 #= require jquery.colorbox-ru
+#= require jquery.inputmask
 #= require bootstrapValidator.min
 #= require formvalidation
 

@@ -1,5 +1,9 @@
 @initValidation = () ->
 
+  $('input[name="feedback[phone]"]').inputmask
+    mask: "+7(999)999-99-99"
+    autoUnmask: true
+
   $("#new_feedback").bootstrapValidator
     icon:
       valid: "glyphicon glyphicon-ok"
@@ -28,8 +32,10 @@
         validators:
           notEmpty:
             message: "Обязательное поле"
-
-          phone:
-            country: "RU"
+          stringLength:
+            min: 10
             message: 'Введите корректный телефон в формате +7(911)976-91-04'
+          # phone:
+          #   country: "RU"
+          #   message: 'Введите корректный телефон в формате +7(911)976-91-04'
 

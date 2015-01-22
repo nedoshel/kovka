@@ -1,12 +1,15 @@
-#content
-  .container
-    .row
-      article.span12
-        #container.row
-          = simple_form_for @feedback, html: { class: "form form-horizontal" } do |f|
-            = f.input :name
-            = f.input :email
-            = f.input :phone, as: :tel
-            = f.input :product_id
-            = f.input :comment
-            = f.button :submit
+#content style="max-width: 700px; min-width: 320px;"
+  #container.row
+    .centered
+      h1 Отправить заявку на
+      h2 = @product.article
+      = image_tag @product.image.url(:thumb)
+      br
+      = simple_form_for @feedback, html: { class: "form feedback" } do |f|
+        = f.input :name
+        = f.input :email
+        = f.input :phone, as: :tel
+        = f.input :product_id, as: :hidden
+        = f.input :comment
+
+        = f.button :submit, 'Отправить заявку'

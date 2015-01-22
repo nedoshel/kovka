@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    attributes:
+      feedback:
+        name: Имя
+        email: Адрес электронной почты
+        phone: Телефон
+        comment: Пожелание

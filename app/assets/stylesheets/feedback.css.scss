@@ -1,0 +1,22 @@
+form.feedback {
+  padding: 20px;
+
+
+
+  .has-error {
+    input {
+      border: 1px solid red;
+    }
+    .help-block {
+      color: red;
+    }
+  }
+
+  input[type="submit"] {
+    margin-top: 20px;
+  }
+}
+
+.centered {
+  text-align: center;
+}
