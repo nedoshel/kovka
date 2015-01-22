@@ -9,13 +9,10 @@ class FeedbacksController < ApplicationController
 
   def create
     @feedback = Feedback.new(feedback_params)
-
-    respond_to do |format|
-      if @feedback.save
-        format.html { redirect_to root_url, notice: 'Category was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @feedback.save
+      render json: :ok
+    else
+      render :new
     end
   end
 
