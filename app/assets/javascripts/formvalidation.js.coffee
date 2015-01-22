@@ -1,8 +1,14 @@
 @initValidation = () ->
 
+
+  $('form.js-feedback').ajaxForm
+    success: (formData, jqForm, options) ->
+      $.colorbox.close()
+
   $('input[name="feedback[phone]"]').inputmask
     mask: "+7(999)999-99-99"
     autoUnmask: true
+
 
   $("#new_feedback").bootstrapValidator
     icon:

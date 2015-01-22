@@ -6,6 +6,7 @@
 #= require jquery.inputmask
 #= require bootstrapValidator.min
 #= require formvalidation
+#= require jquery.form
 
 
 jQuery ->
@@ -25,6 +26,4 @@ jQuery ->
         initValidation()
 
 
-$(document).on 'ajax:success', 'form.js-feedback', (e) ->
-  $.colorbox.close()
 
