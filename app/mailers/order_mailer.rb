@@ -2,6 +2,7 @@ class OrderMailer < ActionMailer::Base
   default from: "info@kovanye.su"
 
   def new_order(feedback)
+    @feedback = feedback
     # @order = order
     mail_to = Templates.send(:mail_to) rescue nil
     mail_to ||= "nedoshel@yandex.ru"

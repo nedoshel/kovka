@@ -6,7 +6,7 @@
       h2 = @product.article
       = image_tag @product.image.url, style: 'max-width: 650px;', class: 'colorbox-img'
       br
-      = simple_form_for @feedback, html: { class: "form feedback" } do |f|
+      = simple_form_for @feedback, html: { class: "form feedback js-feedback" }, remote: true do |f|
         = f.input :name
         = f.input :email
         = f.input :phone, as: :tel

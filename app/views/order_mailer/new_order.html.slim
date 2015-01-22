@@ -1,2 +1,24 @@
-h1 test
-h2 Hi, Alexandr
+/ h1 test
+/ h2 Hi, Alexandr
+
+table border="1"
+  tr
+    td Имя
+    td= @feedback.name
+  tr
+    td Телефон
+    td= @feedback.phone
+  tr
+    td E-mail
+    td= @feedback.email
+  tr
+    td Заказан
+    td
+      = @feedback.product.article
+      br
+      img src="http://#{ActionMailer::Base.default_url_options[:host]}#{@feedback.product.image.url}"
+
+  tr
+    td Пожелания
+    td
+      = @feedback.comment

@@ -25,4 +25,6 @@ jQuery ->
         initValidation()
 
 
+$(document).on 'ajax:success', 'form.js-feedback', (e) ->
+  $.colorbox.close()
 
