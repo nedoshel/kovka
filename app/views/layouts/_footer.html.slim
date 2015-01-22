@@ -3,11 +3,11 @@ footer
     .row
       article.span2
         span
-          'Кованые заборы
+          = @category.try(:firm_purpose).try(:html_safe) || 'Кованые заборы'
           span= Templates.firm_name
       article.span7
         .footer-div
-          span= (content_for?(:footer_text) ? yield(:footer_text) : Templates.footer_text).html_safe
+          span= @category.try(:footer_text).try(:html_safe) || (content_for?(:footer_text) ? yield(:footer_text) : Templates.footer_text).html_safe
       article.span3
         .footer-div
           .store-phone= Templates.phone

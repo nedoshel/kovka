@@ -19,9 +19,10 @@ jQuery ->
       onComplete: (e) ->
         x = $("img.colorbox-img").width() + 50
         # y = jQuery("div.lightbox-stack div.media-gallery-item div.gallery-thumb-outer div.gallery-thumb-inner a img").height()
-        jQuery(this).colorbox.resize
+        $(@).colorbox.resize
           width: x
           # height: y
         initValidation()
+
 
 

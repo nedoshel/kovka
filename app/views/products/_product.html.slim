@@ -1,12 +1,12 @@
 .element class=translit_to_class(product.tag_list)
   div itemscope="" itemtype="http://schema.org/ImageObject"
     .block-thumbnail-2
-      figure.img-polaroid-1
+      figure.img-polaroid-1 alt=product.figure_alt
         a.colorbox href=new_feedback_path(product.id)
           = image_tag product.image.url(:thumb), alt: "Двуспальная кровать недорогая с высоким изголовьем Александрия-1", itemprop: "contentUrl"
-      meta content="300" itemprop="width"
-      meta content="160" itemprop="height"
-      .tovname
+      meta content=product.meta_width itemprop="width"
+      meta content=product.meta_height itemprop="height"
+      .tovname title=product.tovname_title
         = link_to product.article, '#', itemprop: "name", title: "Купить кровать недорого в Москве Александрия-1"
       .full-description
         p itemprop="description"= product.description
