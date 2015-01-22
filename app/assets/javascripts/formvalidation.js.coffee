@@ -51,8 +51,11 @@
 
 
 @initValidation = () ->
+  $('input[name="feedback[phone]"]')
+    .inputmask
+      mask: "+7(999)999-99-99"
+      autoUnmask: true
+
   initValidationForm $('form.js-feedback')
-  $('input[name="feedback[phone]"]').inputmask
-    mask: "+7(999)999-99-99"
-    autoUnmask: true
+
 

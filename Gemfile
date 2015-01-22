@@ -34,7 +34,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'russian'
 
 gem "rails-settings-cached", "0.4.1"
-gem 'jquery-inputmask-rails'
+# gem 'jquery-inputmask-rails'
 
 gem 'puma'
 
