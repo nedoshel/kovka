@@ -26,7 +26,8 @@ class Templates < RailsSettings::CachedSettings
     header_addit: 'Поле, которое будет вставляться текстом в блок <header> (мета-теги для поисковиков, гео-теги)',
     phone: '+7 (499) 000-00-00',
     firm_product: 'кованые изделия',
-    firm_name: 'footer Terko'
+    firm_name: 'footer Terko',
+    mail_to: 'nedoshel@gmail.com;cci@nm.ru'
   }
 
   LOGO = { title: 'Кровати в Москве от производителя', img: '/img/logo.png' }
