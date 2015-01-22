@@ -44,7 +44,7 @@ gem 'bootstrap-validator-rails'
 gem 'will_paginate-bootstrap'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
+gem "letter_opener", :group => :development
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
