@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :products
     resources :settings
+    resources :feedbacks, only: [ :index ]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
