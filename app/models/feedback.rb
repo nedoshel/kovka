@@ -11,7 +11,6 @@ class Feedback < ActiveRecord::Base
 
   private
     def send_mail
-      # OrderMailer.new_order(self).deliver
-      OrderMailer.new_order.deliver
+      OrderMailer.new_order(self).deliver
     end
 end
