@@ -3,7 +3,7 @@ footer
     .row
       article.span2
         span
-          = @category.try(:firm_purpose).try(:html_safe) || 'Кованые заборы'
+          = @category.try(:firm_purpose).try(:html_safe) || Templates.firm_purpose
           span= Templates.firm_name
       article.span7
         .footer-div

@@ -27,7 +27,8 @@ class Templates < RailsSettings::CachedSettings
     phone: '+7 (499) 000-00-00',
     firm_product: 'кованые изделия',
     firm_name: 'footer Terko',
-    mail_to: 'nedoshel@gmail.com;cci@nm.ru'
+    mail_to: 'nedoshel@gmail.com;cci@nm.ru',
+    firm_purpose: 'firm_purpose'
   }
 
   LOGO = { title: 'Кровати в Москве от производителя', img: '/img/logo.png' }
