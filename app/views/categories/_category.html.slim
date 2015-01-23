@@ -8,6 +8,6 @@
       meta content="300" itemprop="width"
       meta content="160" itemprop="height"
       .tovname
-        = link_to category.title, '#', itemprop: "name", title: category.seo_title
+        = link_to category.title, category_href(category), itemprop: "name", title: category.seo_title
       .full-description
         p itemprop="description"= category.category_spec

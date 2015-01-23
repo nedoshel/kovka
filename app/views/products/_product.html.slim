@@ -7,6 +7,6 @@
       meta content=product.meta_width itemprop="width"
       meta content=product.meta_height itemprop="height"
       .tovname title=product.tovname_title
-        = link_to product.article, '#', itemprop: "name", title: product.tovname_title
+        = link_to product.article, new_feedback_path(product.id), itemprop: "name", title: product.tovname_title, class: 'colorbox'
       .full-description
         p itemprop="description"= product.description
