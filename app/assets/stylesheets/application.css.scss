@@ -4,6 +4,7 @@
  *= require bootstrapValidator.min
  *= require_self
  *= require feedback
+ *= require bootstrap-grid
  */
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800|Ubuntu:400,700,600,300,800&subset=cyrillic-ext);
@@ -8490,3 +8491,15 @@ footer span span {
 .message-box .close{ position:absolute;top:2px;right:2px; }
 .message-box .send-success{ color:#000;margin-top:40px; }
 .message-box .send-error{ color:#FF0000;margin-top:50px; }
+
+
+.feedback {
+  .row .col-md-6 {
+    margin: 0;
+    padding: 0;
+    .wrapper {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+}

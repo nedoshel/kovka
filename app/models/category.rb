@@ -10,6 +10,7 @@
 # t.text     "header_addit"
 # t.string   "firm_purpose"
 # t.string   "footer_text"
+# t.string   "h1_text"
 
 
 class Category < ActiveRecord::Base

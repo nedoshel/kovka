@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121120322) do
+ActiveRecord::Schema.define(version: 20150123122428) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150121120322) do
     t.text     "header_addit"
     t.string   "firm_purpose"
     t.string   "footer_text"
+    t.string   "h1_text"
   end
 
   create_table "feedbacks", force: true do |t|
