@@ -2,11 +2,11 @@
   div itemscope="" itemtype="http://schema.org/ImageObject"
     .block-thumbnail-2
       figure.img-polaroid-1 alt=product.figure_alt
-        a.colorbox href=new_feedback_path(product.id)
+        a.colorbox href=new_feedback_path(product.id) title=product.href_title
           = image_tag product.image.url(:thumb), alt: product.figure_alt, itemprop: "contentUrl"
       meta content=product.meta_width itemprop="width"
       meta content=product.meta_height itemprop="height"
       .tovname title=product.tovname_title
-        = link_to product.article, new_feedback_path(product.id), itemprop: "name", title: product.tovname_title, class: 'colorbox'
+        = link_to product.article, new_feedback_path(product.id), itemprop: "name", title: product.href_title, class: 'colorbox'
       .full-description
         p itemprop="description"= product.description
