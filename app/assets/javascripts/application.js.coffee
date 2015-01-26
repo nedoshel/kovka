@@ -26,6 +26,9 @@ jQuery ->
         initValidation()
 
 
-$(document).on 'ajax:success', 'form.js-feedback', (e) ->
-  $.colorbox.close()
+$(document).on 'ajax:success', 'form.js-feedback', (e, data) ->
+  $('#cboxLoadedContent').html data
+  $.colorbox.resize
+    height: '150px'
+  # $.colorbox.close()
 

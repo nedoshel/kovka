@@ -10,7 +10,7 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.new(feedback_params)
     if @feedback.save
-      render json: :ok
+      render partial: 'feedbacks/success', layout: false
     else
       render :new
     end
