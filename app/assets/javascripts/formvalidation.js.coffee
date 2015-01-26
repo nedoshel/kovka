@@ -16,7 +16,7 @@
             regexp:
               # regexp: /[а-яА-Я|\s]+/
               regexp: /^[а-яА-Я|\s]+$/
-              message: "Допустимса только кириллица"
+              message: "Допустима только кириллица"
 
         "feedback[email]":
           validators:
