@@ -10,7 +10,7 @@ class OrderMailer < ActionMailer::Base
     mails_to = mail_to.split(";").map{ |e| e.strip }
 
     # mail(from: @order.email, to: mails_to[0], bcc: mails_to.drop(1), subject: @order.title)
-    mail(to: mails_to[0], bcc: mails_to.drop(1), reply_to: feedback.email, subject: 'Новый заказ')
+    mail(to: mails_to[0], bcc: mails_to.drop(1), reply_to: @feedback.email, subject: "Товар #{@feedback.product_id} от #{@feedback.email}")
   end
 
 end
