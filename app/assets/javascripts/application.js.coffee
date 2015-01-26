@@ -19,7 +19,7 @@ jQuery ->
       href: url
       onComplete: (e) ->
         x = $("img.colorbox-img").width() + 50
-        # y = jQuery("div.lightbox-stack div.media-gallery-item div.gallery-thumb-outer div.gallery-thumb-inner a img").height()
+        # y = $("img.colorbox-img").height() + 450
         $(@).colorbox.resize
           width: x
           # height: y
