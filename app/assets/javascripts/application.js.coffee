@@ -16,16 +16,19 @@
     callback: (total) ->
      if total > 0
       filter = $("#filters li a.selected").data "filter"
-      $('#container').isotope({ filter: "#{filter}.element:visible" })
+      $('#container').isotope
+        filter: filter
+        itemSelector: ".element:visible"
 
 @initIsotope = () ->
   $container = $("#container")
-  $container.isotope itemSelector: ".element"
+  $container.isotope
+    itemSelector: ".element:visible"
   $("#filters a").click ->
     selector = $(this).attr("data-filter")
     $container.isotope
       filter: selector
-      itemSelector: ".element"
+      itemSelector: ".element:visible"
 
     false
 
