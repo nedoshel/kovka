@@ -11,31 +11,37 @@
         "feedback[name]":
           validators:
             notEmpty:
-              message: "Обязательное поле"
+              message: ' '
+              # message: "Обязательное поле"
 
             regexp:
               # regexp: /[а-яА-Я|\s]+/
               regexp: /^[а-яА-Я|\s]+$/
-              message: "Допустима только кириллица"
+              # message: "Допустима только кириллица"
+              message: ' '
 
         "feedback[email]":
           validators:
             notEmpty:
-              message: "Обязательное поле"
+              # message: "Обязательное поле"
+              message: ' '
 
             emailAddress:
-              message: "Введите корректный email"
+              # message: "Введите корректный email"
+              message: ' '
 
         "feedback[phone]":
           validators:
             notEmpty:
-              message: "Обязательное поле"
+              # message: "Обязательное поле"
+              message: ' '
             # phone:
             #   country: 'RU'
             #   message: 'Введите корректный телефон в формате +7(911)976-91-04'
             stringLength:
               min: 10
-              message: 'Введите корректный телефон в формате +7(911)976-91-04'
+              # message: 'Введите корректный телефон в формате +7(911)976-91-04'
+              message: ' '
 
     .on "success.form.bv", (e) ->
       $form = $(e.target)
