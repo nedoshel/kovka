@@ -4,12 +4,54 @@
 #= require jquery.colorbox
 #= require jquery.colorbox-ru
 #= require jquery.inputmask
+#= require jquery.fastLiveFilter
 #= require bootstrapValidator.min
 #= require formvalidation
 #= require jquery.form
 
+@initSearch = () ->
+  $('#search_input').fastLiveFilter '#container',
+    selector: '.js-filter'
+    timeout: 500
+    callback: (total) ->
+     if total > 0
+      filter = $("#filters li a.selected").data "filter"
+      $('#container').isotope({ filter: "#{filter}.element:visible" })
+
+@initIsotope = () ->
+  $container = $("#container")
+  $container.isotope itemSelector: ".element"
+  $("#filters a").click ->
+    selector = $(this).attr("data-filter")
+    $container.isotope
+      filter: selector
+      itemSelector: ".element"
+
+    false
+
+  $optionLinks = $("#filters li a")
+  $optionLinks.click ->
+    $this = $(this)
+    return false  if $this.hasClass("selected")
+    $optionSet = $this.parents("#filters")
+    $optionSet.find(".selected").removeClass "selected"
+    $this.addClass "selected"
+    options = {}
+    key = $optionSet.attr("data-option-key")
+    value = $this.attr("data-option-value")
+    value = (if value is "false" then false else value)
+    options[key] = value
+    if key is "layoutMode" and typeof changeLayoutMode is "function"
+      changeLayoutMode $this, options
+    else
+      $container.isotope options
+    false
 
 jQuery ->
+  initSearch()
+  initIsotope()
+  # $('#search_input').fastLiveFilter '#container .element',
+  #   selector: '.tovname .colorbox'
 
 
   $('.colorbox').on 'click', (e) ->
@@ -24,6 +66,7 @@ jQuery ->
           width: x
           # height: y
         initValidation()
+
 
 
 $(document).on 'ajax:success', 'form.js-feedback', (e, data) ->

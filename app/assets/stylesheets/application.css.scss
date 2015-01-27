@@ -6907,6 +6907,8 @@ header {
   width: 300px;
   height: 320px;
   margin: 10px;
+
+  float: left;
 }
 
 .block-thumbnail-2 {
@@ -8502,4 +8504,9 @@ footer span span {
       padding-left: 15px;
     }
   }
+}
+
+
+#search_input {
+  margin-top: 10px;
 }

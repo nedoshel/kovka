@@ -29,39 +29,6 @@ html lang="ru"
     = javascript_include_tag "application"
   body
     = yield
-
-  javascript:
-    $(function(){
-      var $container = $('#container');
-        $container.isotope({
-        });
-        $('#filters a').click(function(){
-          var selector = $(this).attr('data-filter');
-          $container.isotope({ filter: selector });
-          return false;
-        });
-        var $optionLinks = $('#filters li a');
-      $optionLinks.click(function(){
-        var $this = $(this);
-        if ( $this.hasClass('selected') ) {
-          return false;
-        }
-        var $optionSet = $this.parents('#filters');
-        $optionSet.find('.selected').removeClass('selected');
-        $this.addClass('selected');
-        var options = {},
-            key = $optionSet.attr('data-option-key'),
-            value = $this.attr('data-option-value');
-        value = value === 'false' ? false : value;
-        options[ key ] = value;
-        if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
-          changeLayoutMode( $this, options )
-        } else {
-          $container.isotope( options );
-        }
-        return false;
-      });
-    });
   = render partial: 'layouts/footer'
 
 
