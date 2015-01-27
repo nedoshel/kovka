@@ -14,7 +14,6 @@
     selector: '.js-filter'
     timeout: 500
     callback: (total) ->
-     if total > 0
       filter = $("#filters li a.selected").data "filter"
       $('#container').isotope
         filter: "#{filter}:visible"
