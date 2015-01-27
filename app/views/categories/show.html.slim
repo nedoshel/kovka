@@ -6,7 +6,7 @@ header
           .brand
             a href=root_url(subdomain: '')
               img alt=Templates.logo.try(:title) src=Templates.logo.try(:image).try(:url) title=Templates.logo.try(:title)
-            span Кровати в Москве с доставкой от фабрики производителя
+            span= Templates.span_logo.value
             div itemscope="" itemtype="http://schema.org/Organization"
               span itemprop="name"= "#{@category.try(:firm_purpose) || Templates.firm_purpose} #{(@category.try(:firm_name) || Templates.firm_name)}"
               span itemprop="address"= Templates.address
