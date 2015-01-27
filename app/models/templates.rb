@@ -33,6 +33,7 @@ class Templates < RailsSettings::CachedSettings
 
   LOGO = { title: 'Кровати в Москве от производителя', img: '/img/logo.png' }
   FAVICON = { title: 'фавикон', img: '/img/favicon.ico' }
+  SPAN_LOGO = { title: 'Кровати в Москве с доставкой от фабрики производителя', img: '/img/logo.png' }
 
   def Templates.logo
     Templates.where(var: 'logo').first
@@ -40,6 +41,10 @@ class Templates < RailsSettings::CachedSettings
 
   def Templates.favicon
     Templates.where(var: 'favicon').first
+  end
+
+  def Templates.span_logo
+    Templates.where(var: 'span_logo').first
   end
 
 
