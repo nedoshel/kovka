@@ -28,7 +28,8 @@ class Templates < RailsSettings::CachedSettings
     firm_product: 'кованые изделия',
     firm_name: 'footer Terko',
     mail_to: 'nedoshel@gmail.com;cci@nm.ru',
-    firm_purpose: 'firm_purpose'
+    firm_purpose: 'firm_purpose',
+    address: 'address'
   }
 
   LOGO = { title: 'Кровати в Москве от производителя', img: '/img/logo.png' }
