@@ -8,8 +8,8 @@ header
               img alt=Templates.logo.try(:title) src=Templates.logo.try(:image).try(:url) title=Templates.logo.try(:title)
             span Кровати в Москве с доставкой от фабрики производителя
             div itemscope="" itemtype="http://schema.org/Organization"
-              span itemprop="name"  Фабрика кроватей Letto
-              span itemprop="address"  Москва
+              span itemprop="name"= Templates.firm_name
+              span itemprop="address"= Templates.firm_purpose
               span itemprop="telephone"= Templates.phone
           .text-left
             = Templates.phone
