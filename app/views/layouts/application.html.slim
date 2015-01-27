@@ -17,7 +17,7 @@ html lang="ru"
     meta content=(@category.try(:seo_description) || (content_for?(:description) ? yield(:description) : Templates.description)) name="description" /
     meta content=(@category.try(:seo_keywords) || (content_for?(:keywords) ? yield(:keywords) : Templates.keywords)) name="keywords" /
     meta content="telephone=yes" name="format-detection" /
-    = Templates.header_addit.html_safe
+    = (@category.try(:header_addit) || Templates.header_addit).html_safe
 
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
     = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
