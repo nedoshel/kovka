@@ -17,18 +17,21 @@
      if total > 0
       filter = $("#filters li a.selected").data "filter"
       $('#container').isotope
-        filter: filter
-        itemSelector: ".element:visible"
+        filter: "#{filter}:visible"
+        itemSelector: ".element"
 
 @initIsotope = () ->
   $container = $("#container")
+
   $container.isotope
-    itemSelector: ".element:visible"
+    filter: ":visible"
+    itemSelector: ".element"
+
   $("#filters a").click ->
     selector = $(this).attr("data-filter")
     $container.isotope
-      filter: selector
-      itemSelector: ".element:visible"
+      filter: "#{selector}:visible"
+      itemSelector: ".element"
 
     false
 
