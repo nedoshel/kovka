@@ -26,9 +26,6 @@ header
       article.span12
         .pull-left
           h1= @category.h1_text
-        .pull-right
-          .form
-            input#search_input placeholder='Поиск...' class='form-control' type='text'
     .row
       article.span12
         span.txt-filter Выберите:
@@ -38,7 +35,9 @@ header
           - @tags.each do |tag|
             li
               a data-filter=".#{translit(tag.name)}" href="#"= tag.name
-
+        .pull-right
+          .form
+            input#search_input placeholder='Поиск...' class='form-control' type='text'
         ul#search_list
           #container.row
             = render partial: 'products/product', collection: @category.products
