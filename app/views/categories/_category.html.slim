@@ -6,7 +6,7 @@
         a href=category_href(category)
           = image_tag category.image.url(:thumb), alt: category.seo_title, itemprop: "contentUrl"
       meta content="300" itemprop="width"
-      meta content="160" itemprop="height"
+      meta content="207" itemprop="height"
       .tovname
         = link_to category.title, category_href(category), itemprop: "name", title: category.seo_title
       .full-description

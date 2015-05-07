@@ -4,8 +4,8 @@ li.element class=translit_to_class(product.tag_list)
       figure.img-polaroid-1
         a.colorbox href='#' data-href=new_feedback_path(product.id) title=product.href_title
           = image_tag product.image.url(:thumb), alt: product.figure_alt, itemprop: "contentUrl"
-      meta content=product.meta_width itemprop="width"
-      meta content=product.meta_height itemprop="height"
+      meta content="300" itemprop="width"
+      meta content="207" itemprop="height"
       / .tovname title=product.tovname_title
       .tovname
         = link_to product.article, '#', data: { href: new_feedback_path(product.id) }, itemprop: "name", title: product.href_title, class: 'colorbox js-filter'
