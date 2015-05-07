@@ -7,6 +7,6 @@ li.element class=translit_to_class(product.tag_list)
       meta content=product.meta_width itemprop="width"
       meta content=product.meta_height itemprop="height"
       .tovname title=product.tovname_title
-        = link_to product.article, new_feedback_path(product.id), itemprop: "name", title: product.href_title, class: 'colorbox js-filter'
+        = link_to product.article, '#', data: { href: new_feedback_path(product.id) }, itemprop: "name", title: product.href_title, class: 'colorbox js-filter'
       .full-description
-        p itemprop="description"= product.description
+        p.js-filter itemprop="description"= product.description
