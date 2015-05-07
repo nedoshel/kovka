@@ -85,7 +85,7 @@ Rails.application.configure do
     address: 'smtp.yandex.ru',
     domain:  'yandex.ru',
     port:    25,
-    email:   'info@kovanye.su',
+    user_name: 'info@kovanye.su',
     password: 'kovka-google.com',
     authentication: :plain
   }
