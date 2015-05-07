@@ -30,5 +30,6 @@ html lang="ru"
   body
     = yield
   = render partial: 'layouts/footer'
+  = (@category.try(:counter) || Templates.counter).html_safe
 
 
