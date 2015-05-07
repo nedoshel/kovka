@@ -3,7 +3,7 @@
   = f.input :category_id, collection: Category.pluck(:title, :id)
   = f.input :article
   = f.input :description
-  = f.input :figure_alt
+  = f.input :figure_alt, label: 'img alt'
   = f.input :meta_width
   = f.input :meta_height
   = f.input :tovname_title
