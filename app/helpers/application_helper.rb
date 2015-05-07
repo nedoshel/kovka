@@ -11,11 +11,11 @@ module ApplicationHelper
   end
 
   def translit(str)
-    Russian.translit(str)
+    Russian.translit(str).gsub(" ", '_')
   end
 
   def translit_to_class(str_array)
-    translit(str_array.join(" "))
+    Russian.translit(str_array.map{ |t| t.gsub(" ", "_") }.join(" "))
   end
 
 end
