@@ -61,7 +61,7 @@ jQuery ->
 
   $('.colorbox').on 'click', (e) ->
     e.preventDefault()
-    url = $(@).attr 'href'
+    url = $(@).data('href') || $(@).attr('href')
     $.colorbox
       href: url
       onComplete: (e) ->
