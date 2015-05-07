@@ -1,10 +1,14 @@
+class OnlyAjaxRequest
+  def matches?(request)
+    request.xhr?
+  end
+end
+
 Rails.application.routes.draw do
 
-
-
   resources :categories, only: [ :index ]
-  get '/feedbacks/new/:product_id' => 'feedbacks#new', as: :new_feedback
-  resources :feedbacks, only: [ :create ]
+  get '/feedbacks/new/:product_id' => 'feedbacks#new', as: :new_feedback, constraints: OnlyAjaxRequest.new
+  resources :feedbacks, only: [ :create ], constraints: OnlyAjaxRequest.new
 
 
   constraints(Subdomain) do
