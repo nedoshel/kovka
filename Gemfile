@@ -30,6 +30,7 @@ gem 'carrierwave'
 gem 'jquery-colorbox-rails'
 gem "select2-rails"
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'tooltipster-rails'
 
 gem 'russian'
 

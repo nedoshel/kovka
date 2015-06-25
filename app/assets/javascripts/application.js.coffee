@@ -7,6 +7,7 @@
 #= require jquery.fastLiveFilter
 #= require bootstrapValidator.min
 #= require formvalidation
+#= require jquery.tooltipster.min.js
 #= require jquery.form
 
 @initSearch = () ->
@@ -71,6 +72,14 @@ jQuery ->
           width: x
           # height: y
         initValidation()
+        $('.tooltipster').each ->
+          $t = $(@)
+          $t.tooltipster
+            content: $($t.data 'href').html()
+            contentAsHTML: true
+            maxWidth: 400
+
+
 
 
 
@@ -79,4 +88,5 @@ $(document).on 'ajax:success', 'form.js-feedback', (e, data) ->
   $.colorbox.resize
     height: '150px'
   # $.colorbox.close()
+
 

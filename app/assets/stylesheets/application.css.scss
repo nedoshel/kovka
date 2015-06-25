@@ -5,6 +5,7 @@
  *= require_self
  *= require feedback
  *= require bootstrap-grid
+ *= require tooltipster
  */
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800|Ubuntu:400,700,600,300,800&subset=cyrillic-ext);
@@ -8514,4 +8515,24 @@ footer span span {
 
 #search_list {
   margin: 0;
+}
+
+#colorbox #cboxClose
+{
+  top: 0;
+  right: 0;
+}
+#cboxLoadedContent{
+  margin-top:28px;
+  margin-bottom:0;
+}
+
+.tooltip-list {
+  li {
+    display: inline-block;
+    margin-left: 10px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
 }
