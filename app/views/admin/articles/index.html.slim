@@ -1,0 +1,24 @@
+- model_class = Article
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+  = link_to t('.new', :default => t("helpers.links.new")), new_admin_article_path, :class => 'btn btn-primary'
+
+table class="table table-striped"
+  thead
+    tr
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:title)
+      th= model_class.human_attribute_name(:content)
+      th
+      th=t '.actions', :default => t("helpers.actions")
+  tbody
+    - @articles.each do |article|
+      tr
+        td= link_to article.id, admin_article_path(article)
+        td= article.title
+        td= article.content[0..128]
+        td
+        td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_article_path(article), :class => 'btn btn-default btn-xs'
+          '
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_article_path(article), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'

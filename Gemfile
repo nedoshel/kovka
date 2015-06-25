@@ -31,6 +31,7 @@ gem 'jquery-colorbox-rails'
 gem "select2-rails"
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'tooltipster-rails'
+gem 'bootstrap-wysihtml5-rails'
 
 gem 'russian'
 

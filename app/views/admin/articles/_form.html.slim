@@ -1,0 +1,4 @@
+= simple_form_for [:admin, @article], html: { class: "form form-horizontal article" } do |f|
+  = f.input :title
+  = f.input :content, input_html: { class: 'wysihtml5', rows: 10 }
+  = f.button :submit

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
     resources :categories
     resources :products
+    resources :articles
     resources :settings
     resources :feedbacks, only: [ :index ]
   end

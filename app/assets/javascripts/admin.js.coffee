@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require twitter/bootstrap
 #= require select2
+#= require bootstrap-wysihtml5
 #= require_self
 
 
@@ -62,3 +63,8 @@ jQuery ->
 
     # data: data1
 
+  $('.wysihtml5').wysihtml5
+    toolbar:
+      image: false
+      html: true
+      fa: true
