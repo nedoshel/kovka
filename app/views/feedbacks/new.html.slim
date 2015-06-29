@@ -3,11 +3,11 @@
   #container.row
     .centered
       h1 Отправить заявку на
+      h2 = @product.article
       ul.tooltip-list
         - @product.articles.find_each do |article|
           li
             a.tooltipster data-href="#article#{article.id}" href='javascript:;'= article.title
-      h2 = @product.article
       = image_tag @product.image.url, style: 'max-width: 650px;', class: 'colorbox-img', alt: nil
       br
       = simple_form_for @feedback, html: { class: "form feedback js-feedback" }, remote: true do |f|

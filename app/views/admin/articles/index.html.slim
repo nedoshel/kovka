@@ -16,7 +16,7 @@ table class="table table-striped"
       tr
         td= link_to article.id, admin_article_path(article)
         td= article.title
-        td= article.content[0..128]
+        td== article.content[0..128]
         td
         td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_article_path(article), :class => 'btn btn-default btn-xs'
