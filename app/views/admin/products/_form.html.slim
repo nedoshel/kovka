@@ -1,6 +1,7 @@
 = simple_form_for [:admin, @product], html: { class: "form form-horizontal product" } do |f|
 
   = f.input :category_id, collection: Category.pluck(:title, :id)
+  = f.input :price
   = f.input :article
   = f.input :description
   = f.input :figure_alt, label: 'img alt'
