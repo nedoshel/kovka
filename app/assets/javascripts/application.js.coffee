@@ -5,10 +5,16 @@
 #= require jquery.colorbox-ru
 #= require jquery.inputmask
 #= require jquery.fastLiveFilter
-#= require bootstrapValidator.min
+
+
+#= require jquery.validate
+#= require jquery.validate.additional-methods
+#= require jquery.validate.localization/messages_ru
 #= require formvalidation
 #= require jquery.tooltipster.min.js
 #= require jquery.form
+
+#= require feedbacks
 
 @initSearch = () ->
   $('#search_input').fastLiveFilter '#container',
@@ -58,35 +64,3 @@ jQuery ->
   initIsotope()
   # $('#search_input').fastLiveFilter '#container .element',
   #   selector: '.tovname .colorbox'
-
-
-  $('.colorbox').on 'click', (e) ->
-    e.preventDefault()
-    url = $(@).data('href') || $(@).attr('href')
-    $.colorbox
-      href: url
-      onComplete: (e) ->
-        x = $("img.colorbox-img").width() + 50
-        # y = $("img.colorbox-img").height() + 450
-        $(@).colorbox.resize
-          width: x
-          # height: y
-        initValidation()
-        $('.tooltipster').each ->
-          $t = $(@)
-          $t.tooltipster
-            content: $($t.data 'href').html()
-            contentAsHTML: true
-            maxWidth: 400
-
-
-
-
-
-$(document).on 'ajax:success', 'form.js-feedback', (e, data) ->
-  $('#cboxLoadedContent').html data
-  $.colorbox.resize
-    height: '150px'
-  # $.colorbox.close()
-
-

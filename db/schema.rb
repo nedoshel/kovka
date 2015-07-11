@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708183420) do
+ActiveRecord::Schema.define(version: 20150711150748) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20150708183420) do
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
+    t.boolean  "is_send"
   end
 
   add_index "feedbacks", ["product_id"], name: "index_feedbacks_on_product_id", using: :btree

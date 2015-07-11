@@ -8537,3 +8537,12 @@ footer span span {
     }
   }
 }
+
+#cboxContent {
+  #content {
+    overflow: hidden;
+  }
+}
+#cboxLoadedContent {
+  overflow: hidden !important;
+}

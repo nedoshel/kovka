@@ -13,7 +13,7 @@ class OrderMailer < ActionMailer::Base
       to: mails_to[0],
       bcc: mails_to.drop(1),
       reply_to: @feedback.email,
-      subject: "Заявка на #{@feedback.product.article} от #{@feedback.name}"
+      subject: @feedback.subject
     )
   end
 

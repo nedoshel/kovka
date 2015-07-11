@@ -8,9 +8,13 @@
         - @product.articles.find_each do |article|
           li
             a.tooltipster data-href="#article#{article.id}" href='javascript:;'= article.title
-      = image_tag @product.image.url, style: 'max-width: 650px;', class: 'colorbox-img', alt: nil
-      br
-      = simple_form_for @feedback, html: { class: "form feedback js-feedback" }, remote: true do |f|
+      = simple_form_for @feedback, html: { class: "form feedback js-feedback" } do |f|
+        .image-wrapper
+          = image_tag @product.image.url, style: 'max-width: 650px;', class: 'colorbox-img', alt: nil
+          = f.label :image, 'Предложить свой эскиз'
+          .hidden
+            = f.input :image, input_html: { accept: "image/*" }
+        br
         .row style='margin: 0;'
           .col-xs-12.col-md-6
             .wrapper
@@ -22,6 +26,9 @@
             .wrapper
               = f.input :comment, input_html: { rows: 7 }
 
+        .progress.hidden
+          .progress-bar aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" role="progressbar" style=("width: 0%;")
+            span.sr-only 0%
         = f.button :submit, 'Отправить заявку', class: 'btn btn-default js-feedback-submit'
 .hidden
   - @product.articles.find_each do |article|

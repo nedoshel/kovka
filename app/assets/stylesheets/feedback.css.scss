@@ -25,3 +25,16 @@ form.feedback {
 #colorbox img {
   margin-left: 10px;
 }
+.progress-bar{
+  background-color: #b74c0e;
+  .sr-only{
+      color: white;
+  }
+}
+
+
+form.feedback {
+  span.help-block {
+    display: none !important;
+  }
+}

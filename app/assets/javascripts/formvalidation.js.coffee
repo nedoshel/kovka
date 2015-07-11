@@ -1,60 +1,86 @@
+# $.validator.addMethod 'correctName', ((value, element) ->
+#    result = .test(value)
+#    console.log result
+#    return result
+# ), 'Неверное Имя'
+
 @initValidationForm = ($form) ->
 
-  $form
-    .bootstrapValidator
-      icon:
-        valid: "glyphicon glyphicon-ok"
-        invalid: "glyphicon glyphicon-remove"
-        validating: "glyphicon glyphicon-refresh"
+  patterns = {}
+  $form.each ->
+    patterns[$(@).attr("name")] =
+      pattern: $(@).data("rule")
 
-      fields:
-        "feedback[name]":
-          validators:
-            notEmpty:
-              message: ' '
-              # message: "Обязательное поле"
+  profile_rules =
+    # "user[account_attributes][current_bill]":
+    #   required:
+    #     depends: (element) ->
+    #       return $("#user_account_attributes_payment_method").val() == "account"
+    #   digits: true
+    #   minlength: 20
+    #   maxlength: 20
 
-            regexp:
-              # regexp: /[а-яА-Я|\s]+/
-              regexp: /^[а-яА-Я|\s]+$/
-              # message: "Допустима только кириллица"
-              message: ' '
+    "feedback[name]":
+      required: true
+      pattern: /^[а-яА-Я|\s]+$/i
 
-        "feedback[email]":
-          validators:
-            notEmpty:
-              # message: "Обязательное поле"
-              message: ' '
+    "feedback[email]":
+      required: true
+      email: true
 
-            emailAddress:
-              # message: "Введите корректный email"
-              message: ' '
+    "feedback[phone]":
+      required: true
+      minlength: 10
 
-        "feedback[phone]":
-          validators:
-            notEmpty:
-              # message: "Обязательное поле"
-              message: ' '
-            # phone:
-            #   country: 'RU'
-            #   message: 'Введите корректный телефон в формате +7(911)976-91-04'
-            stringLength:
-              min: 10
-              # message: 'Введите корректный телефон в формате +7(911)976-91-04'
-              message: ' '
 
-    .on "success.form.bv", (e) ->
-      $form = $(e.target)
-      e.preventDefault()  if $form.data("remote") and $.rails isnt `undefined`
+
+  $.extend( true, profile_rules, patterns )
+
+  $form.validate
+    rules:
+      profile_rules
+    messages:
+      required: ' '
+      pattern: ' '
+      email: ' '
+
+    onfocusout: (element) ->
+      $form.valid()
+
+    highlight: (element) ->
+      $(element).closest(".form-group").addClass "has-error"
       return
 
-    .on "submit", (e) ->
-      $form = $(e.target)
-      if $form.data("remote")
-        numInvalidFields = $form.data("bootstrapValidator").getInvalidFields().length
-        if numInvalidFields
-          e.preventDefault()
-          false
+    unhighlight: (element) ->
+      $(element).closest(".form-group").find('.help-block').remove()
+      $(element).closest(".form-group").removeClass "has-error"
+      return
+
+    errorElement: "span"
+    errorClass: "help-block"
+
+    errorPlacement: (error, element) ->
+      if element.parent(".input-group").length
+        error.insertAfter element.parent()
+      else if element.closest(".error-wrapper").length
+        element.closest(".error-wrapper").append error
+      else
+        error.insertAfter element
+      return
+
+    submitHandler: (form) ->
+      console.log 'submitHandler'
+      $(form).ajaxSubmit
+        uploadProgress: (event, position, total, percentComplete) ->
+          $('.progress').removeClass 'hidden'
+          percent = "#{percentComplete}%"
+          $('.progress-bar').css('width', percent)
+          $('.sr-only').text percent
+
+        success: (responseText, statusText, xhr, $form) ->
+          $('#cboxLoadedContent').html responseText
+          $.colorbox.resize
+            height: '150px'
 
 
 @initValidation = () ->

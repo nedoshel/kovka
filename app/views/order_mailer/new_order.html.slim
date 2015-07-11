@@ -14,9 +14,9 @@ table border="1"
   tr
     td Заказан
     td
-      = @feedback.product.article
+      = @feedback.order_name
       br
-      img src="http://#{ActionMailer::Base.default_url_options[:host]}#{@feedback.product.image.url}"
+      img src="http://#{ActionMailer::Base.default_url_options[:host]}#{@feedback.image.try(:url) || @feedback.product.image.url}"
 
   tr
     td Пожелания
