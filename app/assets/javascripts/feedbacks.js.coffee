@@ -8,6 +8,7 @@
     oFReader.readAsDataURL @files[0]
     oFReader.onload = (oFREvent) ->
       $('img.colorbox-img').attr 'src', oFREvent.target.result
+      $('#cboxLoadedContent h2').text "Индивидуальный заказ"
 
 
 $(document).on 'submit', 'form.js-feedback', (e, data) ->
