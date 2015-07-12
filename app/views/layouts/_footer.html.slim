@@ -1,13 +1,13 @@
 footer
   .container
     .row
-      article.span2
+      article.span3
         span
           = @category.try(:firm_purpose).try(:html_safe) || Templates.firm_purpose
           span= " #{Templates.firm_name}"
         br
         span = Templates.address
-      article.span7
+      article.span6
         .footer-div
           span= @category.try(:footer_text).try(:html_safe) || (content_for?(:footer_text) ? yield(:footer_text) : Templates.footer_text).html_safe
       article.span3
