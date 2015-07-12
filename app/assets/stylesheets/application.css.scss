@@ -7910,6 +7910,11 @@ footer span span {
   width: 100%;
   margin: 0px 0px 0px 0px;
   text-align: justify;
+  p {
+    padding-right: 5px;
+    padding-left: 5px;
+    text-indent: 10px;
+  }
 }
 
 .form-order {
