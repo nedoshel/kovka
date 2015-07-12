@@ -5,6 +5,8 @@ footer
         span
           = @category.try(:firm_purpose).try(:html_safe) || Templates.firm_purpose
           span= " #{Templates.firm_name}"
+        br
+        span = Templates.address
       article.span7
         .footer-div
           span= @category.try(:footer_text).try(:html_safe) || (content_for?(:footer_text) ? yield(:footer_text) : Templates.footer_text).html_safe
