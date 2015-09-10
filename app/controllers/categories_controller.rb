@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @tags = @category.products.tag_counts_on(:tags)
+    @tags = @category.products.tag_counts_on(:tags) + @category.price_list
   end
 
   # GET /categories/new

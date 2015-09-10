@@ -16,9 +16,11 @@
 class Category < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
+  acts_as_taggable_on :prices
 
   has_many :products, dependent: :destroy
   has_and_belongs_to_many :articles
 
   validates_presence_of :image
+
 end

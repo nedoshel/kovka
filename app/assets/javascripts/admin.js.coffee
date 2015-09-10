@@ -7,27 +7,14 @@
 
 
 jQuery ->
-  data1 = [
-    {
-      id: "дешевые"
-      text: "дешевые"
-    }
-    {
-      id: "ворота"
-      text: "ворота"
-    }
-    {
-      id: "эскизы"
-      text: "эскизы"
-    }
-  ]
+
   $(".js-select2-tags").select2
     tags: true
     tokenSeparators: [","]
     createSearchChoice :  (term) ->
       { id: term, text: term }
     ajax:
-      url: '/admin/tags.json'
+      url: "/admin/tags.json?t=#{$(".js-select2-tags").data('type')}"
       dataType: "json"
       data: (term, page) ->
         console.log term

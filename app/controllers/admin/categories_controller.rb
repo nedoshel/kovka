@@ -67,7 +67,7 @@ class Admin::CategoriesController < AdminController
     end
 
     def admin_category_params
-      params.require(:category).permit(:title, :subdomain, :seo_title, :seo_description, :seo_keywords, :category_spec,
+      params.require(:category).permit(:title, :subdomain, :seo_title, :price_list, :seo_description, :seo_keywords, :category_spec,
         :header_addit, :firm_purpose, :footer_text, :image, :h1_text, :counter, article_ids: [])
     end
 end

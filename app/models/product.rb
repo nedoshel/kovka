@@ -22,4 +22,12 @@ class Product < ActiveRecord::Base
 
   validates_presence_of :category_id, :image, :article
 
+  def all_tags
+    category.price_list.map do |tag|
+      t_array = tag.split("-").map(&:to_i)
+      left, right = t_array.first, t_array.last
+      (left..right).include?(price) ? tag : nil
+    end.compact + tag_list
+  end
+
 end

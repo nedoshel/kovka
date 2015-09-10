@@ -13,6 +13,7 @@
   = f.input :footer_text
   = f.input :counter
   = f.input :image
+  = f.input :price_list, input_html: { class: 'js-select2-tags', data: { type: 'price' } }
   - if @category.image.present?
     = image_tag @category.image.url
     .clearfix

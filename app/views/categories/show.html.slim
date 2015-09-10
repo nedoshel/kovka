@@ -33,8 +33,9 @@ header
           li
             a.selected data-filter="*" href="#"  Все варианты
           - @tags.each do |tag|
+            - name = tag.kind_of?(String) ? tag : tag.name
             li
-              a data-filter=".#{translit(tag.name)}" href="#"= tag.name
+              a data-filter=".#{translit(name)}" href="#"= name
         .pull-right
           .form
             input#search_input placeholder='Поиск...' class='form-control' type='text'
