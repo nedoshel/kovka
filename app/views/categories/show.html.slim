@@ -35,7 +35,7 @@ header
           - @tags.each do |tag|
             - name = tag.kind_of?(String) ? tag : tag.name
             li
-              a data-filter=".#{translit(name)}" href="#"= name
+              a data-filter=".#{translit(name)}" href="#"= "#{name}#{' тыс. руб. за м²' if tag.kind_of?(String)}"
         .pull-right
           .form
             input#search_input placeholder='Поиск...' class='form-control' type='text'
