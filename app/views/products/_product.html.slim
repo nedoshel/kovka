@@ -3,7 +3,7 @@ li.element class=translit_to_class(product.all_tags)
     .block-thumbnail-2
       figure.img-polaroid-1
         .priceimg
-          p #{product.viewed_price} за 1 м²
+          span #{product.viewed_price} за 1 м²
         a.colorbox href='#' data-href=new_feedback_path(product.id) title=product.href_title
           = image_tag product.image.url(:thumb), alt: product.figure_alt, itemprop: "contentUrl"
       meta content="300" itemprop="width"
