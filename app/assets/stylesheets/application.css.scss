@@ -7950,6 +7950,20 @@ footer span span {
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
 }
+.priceimg {
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  height: 30px;
+  width: 140px;
+  top: 20px;
+  background-color: #B94D10;
+  line-height: 30px;
+  font-family: Ubuntu;
+  font-size: 20px;
+  color: white;
+  text-align: left;
+}
 .nomargin{
   margin-left:0px;
 }
