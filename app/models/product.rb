@@ -7,14 +7,9 @@
 # t.integer  "meta_width"
 # t.integer  "meta_height"
 # t.string   "tovname_title"
-
-
-
 class Product < ActiveRecord::Base
-
   mount_uploader :image, ImageUploader
   acts_as_taggable
-
 
   belongs_to :category
   has_many :feedbacks, dependent: :nullify
@@ -28,6 +23,10 @@ class Product < ActiveRecord::Base
       left, right = t_array.first, t_array.last
       (left..right).include?(price) ? tag : nil
     end.compact + tag_list
+  end
+
+  def viewed_price
+    price.present? ? price * 1000 : nil
   end
 
 end
